@@ -5,6 +5,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>React Example - 1 Minute React</title>
+
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     </head>
 
 
@@ -17,16 +23,42 @@
         <div id="comment_list"></div>
 
         <br>
-        <p>Based on <a href="https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda">"Add React in One
-                Minute"</a></p>
+        <div id="references">
+            <p><b>References:</b>
+            <ul>
+                <li><a href="https://gist.github.com/charlos/10c0c7924f9cc374d19441a6718799c1">
+                        Multiple React components on a single HTML page (JS 100%)
+                    </a></li>
+                <li><a href="https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda">
+                        Add React in One Minute
+                    </a>
+                </li>
+                <li><a href="https://pt-br.reactjs.org/docs/add-react-to-a-website.html">
+                        Experimente Rapidamente JSX
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html">
+                        Exemplo de arquivo HTML com JSX
+                    </a>
+                </li>
+            </ul>
 
-        <!-- Load React. -->
-        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+            </p>
+        </div>
 
-        <!-- Load our React component. -->
-        <script src="comment_list.js"></script>
+        <script type="text/babel">
+            const numbers = [1, 2, 3, 4, 5];
+            const listItems = numbers.map((number) =>
+                <li>{number}</li>
+            );
+
+            ReactDOM.render(
+                <ul>{listItems}</ul>,
+                document.getElementById('comment_list')
+            );
+        </script>
 
     </body>
 

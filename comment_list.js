@@ -74,19 +74,16 @@
 
 function ListItem(props) {
     return (
-        // Correct! no need to define the key here
         <li>{props.value}</li>
     );
 }
 
 function NumberList(props) {
-    const numbers = props.numbers;
-    const listItems = numbers.map((number, i) => {
-        // Correct! The key should be defined here
+    const listItems = props.numbers.map(number =>
         <ListItem
             key={number.toString()}
             value={number} />
-    });
+    );
     return (
         <ul> {listItems} </ul>
     );

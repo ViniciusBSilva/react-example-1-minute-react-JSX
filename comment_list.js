@@ -62,8 +62,8 @@
 
 // }
 
-// const domContainer = document.getElementById('comment_list')
-// const root = ReactDOM.createRoot(domContainer);
+
+
 
 // root.render(
 //     e(CommentList, {
@@ -87,7 +87,9 @@ function NumberList(props) {
 
 const numbers = [1, 2, 3, 4, 5];
 
-ReactDOM.render(
+const domContainer = document.getElementById('comment_list');
+const root = ReactDOM.createRoot(domContainer);
+
+root.render(
     <NumberList numbers={numbers} />,
-    document.getElementById('comment_list')
 );

@@ -73,20 +73,19 @@
 // );
 
 function ListItem(props) {
-    const value = props.value;
     return (
-        // Wrong! no need to define the key here
-        <li key={value.toString()}>
-            {value}
-        </li>
+        // Correct! no need to define the key here
+        <li>{props.value}</li>
     );
 }
 
 function NumberList(props) {
     const numbers = props.numbers;
     const listItems = numbers.map((number, i) => {
-        // Wrong! the key should be defined here
-        <ListItem value={number} />
+        // Correct! The key should be defined here
+        <ListItem
+            key={number.toString()}
+            value={number} />
     });
     return (
         <ul> {listItems} </ul>
